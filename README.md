@@ -1,5 +1,8 @@
 # 🌟 CLAMP: Contrastive Language And Molecule Pre-training Network 🌟
 
+<img width="433" alt="image" src="https://github.com/neelr/clamp/assets/35831013/640a9c12-7add-443d-b56b-ec01782fa4ce" style="align-self:center" >
+
+
 Welcome to the official repository of CLAMP (Contrastive Language And Molecule Pre-training Network) - the frontier in marrying the power of language with the intricacies of molecular structures to revolutionize material generation! 🔬🧬
 
 ## What is CLAMP? 🤔
@@ -28,7 +31,7 @@ Here's a simple guide to kick off your adventure with CLAMP:
 ### Step 1: Clone the Repository 🏗️
 
 ```sh
-git clone https://github.com/your-username/clamp.git
+git clone https://github.com/neelr/clamp.git
 cd clamp
 ```
 
@@ -42,7 +45,7 @@ pip install -r requirements.txt
 
 ### Step 3: Set Up Your Dataset 📊
 
-Prepare your dataset by scraping the web or dusting off those CSVs and JSON files. Place them under the `./cifs` directory like they're precious gems - which they are!
+Download the dataset from https://www.kaggle.com/datasets/programgeek01/cif-summary-data or compile it with `cif_downloader.py` and `annotation_scraper.py`
 
 ### Step 4: Train Your Model 🏋️‍
 
