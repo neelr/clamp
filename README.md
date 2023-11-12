@@ -44,9 +44,9 @@ Train CLAMP with your data
 python clamp_model.py
 ```
 
-### Step 5: Unleash the Power 🔮
+### Step 5: Zero-shot classification!
 
-Use your trained CLAMP model to predict material properties or generate new crystals.
+Use the trained CLAMP model to predict material properties or generate new crystals!
 
 ## Prerequisites 🗝
 
