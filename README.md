@@ -2,15 +2,6 @@
 
 <img width="433" alt="image" src="https://github.com/neelr/clamp/assets/35831013/640a9c12-7add-443d-b56b-ec01782fa4ce" style="align-self:center" >
 
-
-Welcome to the official repository of CLAMP (Contrastive Language And Molecule Pre-training Network) - the frontier in marrying the power of language with the intricacies of molecular structures to revolutionize material generation! 🔬🧬
-
-## What is CLAMP? 🤔
-
-CLAMP is a cutting-edge deep learning framework designed to foster innovation in material science. At its heart, CLAMP is an architecture that understands and generates materials by leveraging the massive untapped potential of textual data paired with crystal structures, gathered from the vast expanses of open-source research papers. 📚✨
-
-Through a fusion of a Convolutional Graph Neural Network (CGCNN) encoder and a language encoder, we breathe life into a contrastive model that is not only incredibly smart but also fun to work with - who knew molecules and words could be this cool together?
-
 ## Abstract 📝
 https://s.neelr.dev/clamp-research-paper
 
@@ -18,17 +9,17 @@ This paper highlights a shift in how to approach material generation. Instead of
 
 ## Features of CLAMP 🌈
 
-- **Here for your zero-shot classification needs:** Achieve unsupervised classification on completely new data with impressive accuracy - no specific training required!
-- **Web-scraping:** Integrates easily with web-scraping tools to collate crystal structure and text data pairs directly from research papers. Knowledge is power, and CLAMP harnesses it from the web!
-- **Language to material:** Utilizes the structure and vastness of linguistic data to predict and generate material properties. It's like having a super-smart alchemist at your fingertips!
-- **Photocatalyst prediction:** With just a small dataset, CLAMP dazzles with its ability to predict photocatalyst effectiveness. 🌞⚗️
-- **Future-forward:** Built with diffusion models in mind for later experiments, it's a springboard for exploring the uncharted territories of latent chemical space!
+- **Zero-shot classification:** Achieve unsupervised classification on completely new data with ~82% accuracy-no specific training required!
+- **First web-scraped crystal-text dataset:** The files autoscrape cif-text pairs from the internet, collecting ~222k crystal-text pairs which is unheard of at the moment.
+- **Language to material:** Utilizes the structure and vastness of linguistic data to predict and generate material properties.
+- **Photocatalyst prediction:** With just a small dataset, CLAMP proves its ability with a 75% accuracy in photocatalyst prediction, showing its ability.
+- **Future Steps:** Built with diffusion models in mind for later experiments, it's a springboard for exploring the latent chemical space!
 
 ## How to Get Started? 💼
 
-Here's a simple guide to kick off your adventure with CLAMP:
+Here's a simple guide to kick off dev with CLAMP:
 
-### Step 1: Clone the Repository 🏗️
+### Step 1: Clone the Repo 🏗️
 
 ```sh
 git clone https://github.com/neelr/clamp.git
@@ -36,8 +27,6 @@ cd clamp
 ```
 
 ### Step 2: Install Dependencies 🛠
-
-Make sure you've got all the ingredients for this alchemical experiment!
 
 ```sh
 pip install -r requirements.txt
@@ -49,7 +38,7 @@ Download the dataset from https://www.kaggle.com/datasets/programgeek01/cif-summ
 
 ### Step 4: Train Your Model 🏋️‍
 
-Train CLAMP with your data to become the sorcerer supreme of material science!
+Train CLAMP with your data
 
 ```python
 python clamp_model.py
@@ -57,18 +46,16 @@ python clamp_model.py
 
 ### Step 5: Unleash the Power 🔮
 
-Use your trained CLAMP model to predict material properties or generate new crystals. Watch as the magic unfolds!
+Use your trained CLAMP model to predict material properties or generate new crystals.
 
 ## Prerequisites 🗝
 
 - Python 3.6+
 - PyTorch
-- A sprinkle of creativity
-- A dash of enthusiasm for science!
 
 ## Contributing 🤝
 
-Jump in and join the alchemy party! Whether it's adding new features, fixing bugs, or spreading the word, your contributions are what make CLAMP not just a code base, but a community.
+Jump in and join the party! Whether it's adding new features, fixing bugs, or spreading the word, your contributions are what make CLAMP not just a code base, but a community. Hopefully it becomes as widespread as CLIP is for image generation.
 
 ## License 📜
 
