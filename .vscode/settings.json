@@ -1,4 +1,5 @@
 {
   "gitlens.codeLens.enabled": false,
-  "git.enabled": false
+  "git.enabled": false,
+  "notebook.output.textLineLimit": 0,
 }

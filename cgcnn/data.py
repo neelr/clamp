@@ -13,10 +13,12 @@ warnings.simplefilter('ignore')
 import numpy as np
 import torch
 from pymatgen.core.structure import Structure
+from pymatgen.core import Element
 from torch.utils.data import Dataset, DataLoader
 from torch.utils.data.dataloader import default_collate
 from torch.utils.data.sampler import SubsetRandomSampler
-
+import pandas as pd
+from tqdm import tqdm
 
 def get_train_val_test_loader(dataset, collate_fn=default_collate,
                               batch_size=64, train_ratio=None,
@@ -53,7 +55,7 @@ def get_train_val_test_loader(dataset, collate_fn=default_collate,
         return_test=True.
     """
     total_size = len(dataset)
-    if kwargs['train_size'] is None:
+    if None is None:
         if train_ratio is None:
             assert val_ratio + test_ratio < 1
             train_ratio = 1 - val_ratio - test_ratio
@@ -62,18 +64,10 @@ def get_train_val_test_loader(dataset, collate_fn=default_collate,
         else:
             assert train_ratio + val_ratio + test_ratio <= 1
     indices = list(range(total_size))
-    if kwargs['train_size']:
-        train_size = kwargs['train_size']
-    else:
-        train_size = int(train_ratio * total_size)
-    if kwargs['test_size']:
-        test_size = kwargs['test_size']
-    else:
-        test_size = int(test_ratio * total_size)
-    if kwargs['val_size']:
-        valid_size = kwargs['val_size']
-    else:
-        valid_size = int(val_ratio * total_size)
+    
+    train_size = int(train_ratio * total_size)
+    test_size = int(test_ratio * total_size)
+    valid_size = int(val_ratio * total_size)
     train_sampler = SubsetRandomSampler(indices[:train_size])
     val_sampler = SubsetRandomSampler(
         indices[-(valid_size + test_size):-test_size])
@@ -306,6 +300,7 @@ class CIFData(Dataset):
         self.max_num_nbr, self.radius = max_num_nbr, radius
         assert os.path.exists(root_dir), 'root_dir does not exist!'
         id_prop_file = os.path.join(self.root_dir, 'id_prop.csv')
+        self.id_prop_file = id_prop_file
         assert os.path.exists(id_prop_file), 'id_prop.csv does not exist!'
         with open(id_prop_file) as f:
             reader = csv.reader(f)
@@ -317,6 +312,38 @@ class CIFData(Dataset):
         self.ari = AtomCustomJSONInitializer(atom_init_file)
         self.gdf = GaussianDistance(dmin=dmin, dmax=self.radius, step=step)
 
+    def find_errors(self, write=True):
+        errorList = []
+        print("Gathering error CIFs")
+        pbar = tqdm(list(range(self.__len__())))
+        for i in pbar:
+          pbar.set_description(f"Length of error list: {len(errorList)}")
+          try:
+            self.__getitem__(i)
+          except:
+            errorList.append(self.id_prop_data[i][0])
+        print("Removing files...")
+        if write:
+          for i in tqdm(errorList):
+            try:
+              os.remove(os.path.join(self.root_dir, i + ".cif"))
+            except:
+              pass
+        df = pd.read_csv(self.id_prop_file, header=None, names=["id", "description"])
+        df = df[df["id"].astype(str).isin(errorList) == False]
+        if write:
+          df.to_csv(self.id_prop_file, header=None, index=False)
+        else:
+          # write to idprop variable
+          self.id_prop_data = df.values.tolist()
+          #shuffle again
+          random.seed(self.random_seed)
+          random.shuffle(self.id_prop_data)
+        print("Done!")
+
+        # call init again with same parameters
+        self.__init__(self.root_dir, self.max_num_nbr, self.radius)
+
     def __len__(self):
         return len(self.id_prop_data)
 
@@ -325,8 +352,25 @@ class CIFData(Dataset):
         cif_id, target = self.id_prop_data[idx]
         crystal = Structure.from_file(os.path.join(self.root_dir,
                                                    cif_id+'.cif'))
-        atom_fea = np.vstack([self.ari.get_atom_fea(crystal[i].specie.number)
-                              for i in range(len(crystal))])
+        # loop over elements in the crystal and get the atom number
+        atom_feature_array = []
+
+        for i in range(len(crystal)):
+            try:
+                atom_num = crystal[i].specie.number
+                occu = crystal[i].as_dict()['species'][0]['occu']
+                atom_feature_array.append(occu * self.ari.get_atom_fea(atom_num))
+            except AttributeError:
+                mixed_el = []
+                for j in range(len(crystal[i].as_dict()["species"])):
+                    el = crystal.as_dict()["sites"][i]["species"][j]["element"]
+                    occu = crystal.as_dict()["sites"][i]["species"][j]["occu"]
+                    el_atomic_number = Element(el).data["Atomic no"]
+                    el_feature = occu * self.ari.get_atom_fea(el_atomic_number)
+                    mixed_el.append(el_feature)
+                atom_feature_array.append(sum(mixed_el))
+
+        atom_fea = np.vstack(atom_feature_array)
         atom_fea = torch.Tensor(atom_fea)
         all_nbrs = crystal.get_all_neighbors(self.radius, include_index=True)
         all_nbrs = [sorted(nbrs, key=lambda x: x[1]) for nbrs in all_nbrs]
