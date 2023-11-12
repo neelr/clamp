@@ -1,0 +1,187 @@
+absl-py==1.2.0
+aiohttp==3.8.4
+aiosignal==1.3.1
+anyio==3.6.1
+appnope @ file:///Users/ktietz/demo/mc3/conda-bld/appnope_1629146036738/work
+argon2-cffi==21.3.0
+argon2-cffi-bindings==21.2.0
+asttokens @ file:///opt/conda/conda-bld/asttokens_1646925590279/work
+async-timeout==4.0.2
+attrs==22.1.0
+Babel==2.10.3
+backcall @ file:///home/ktietz/src/ci/backcall_1611930011877/work
+beautifulsoup4==4.11.1
+bleach==5.0.1
+blinker==1.6.2
+blobfile==2.0.2
+cachetools==5.2.0
+certifi==2022.12.7
+charset-normalizer==3.0.1
+click==8.1.3
+clip @ git+https://github.com/openai/CLIP.git@3702849800aa56e2223035bccd1c6ef91c704ca8
+colorama @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_100_k35lkb/croot/colorama_1672386539781/work
+contourpy==1.0.7
+cycler==0.11.0
+debugpy @ file:///Users/builder/miniconda3/envs/prefect/conda-bld/debugpy_1637092214173/work
+decorator @ file:///opt/conda/conda-bld/decorator_1643638310831/work
+defusedxml==0.7.1
+entrypoints @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-jb01gaox/entrypoints_1650293758411/work
+executing @ file:///opt/conda/conda-bld/executing_1646925071911/work
+fastjsonschema==2.16.1
+ffmpeg-python==0.2.0
+filelock==3.9.0
+fire==0.5.0
+Flask==2.3.2
+Flask-Cors==3.0.10
+flit_core @ file:///opt/conda/conda-bld/flit-core_1644941570762/work/source/flit_core
+fonttools==4.38.0
+frozenlist==1.3.3
+ftfy==6.1.1
+future==0.18.2
+gmpy2 @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/croot-muov7gw1/gmpy2_1645462616268/work
+google-api-core==2.11.0
+google-api-python-client==2.50.0
+google-auth==2.16.0
+google-auth-httplib2==0.1.0
+google-auth-oauthlib==0.4.6
+googleapis-common-protos==1.58.0
+grab==0.6.41
+grpcio==1.47.0
+habanero==1.2.2
+httplib2==0.21.0
+huggingface-hub==0.13.3
+humanize==4.5.0
+idna==3.4
+imageio==2.25.0
+importlib-metadata==4.12.0
+ipykernel @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-4yxj69n0/ipykernel_1647009452031/work/dist/ipykernel-6.9.1-py3-none-any.whl
+ipython @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_df384d36-235b-4a10-98f5-52bceb3ceae46obihg1k/croots/recipe/ipython_1657652224441/work
+ipython-genutils==0.2.0
+ipywidgets==8.0.4
+itsdangerous==2.1.2
+jedi @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/croot-f1t6hma6/jedi_1644315882177/work
+Jinja2==3.1.2
+joblib==1.2.0
+json5==0.9.9
+jsonschema==4.9.1
+jupyter-client @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_37f0874a-8189-43c8-984a-7cc5aa7f2a00vekz677y/croots/recipe/jupyter_client_1650622203010/work
+jupyter-core @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_5839c60e-0f30-4a99-b0b9-2b009ec5fec40y9fo9ym/croots/recipe/jupyter_core_1651671230982/work
+jupyter-server==1.18.1
+jupyterlab==3.4.4
+jupyterlab-pygments==0.2.2
+jupyterlab-server==2.15.0
+jupyterlab-widgets==3.0.5
+kiwisolver==1.4.4
+libgenapi==1.2.1
+llvmlite==0.39.1
+loguru==0.6.0
+lxml==4.9.2
+Markdown==3.4.1
+MarkupSafe==2.1.1
+matplotlib==3.6.3
+matplotlib-inline @ file:///tmp/build/80754af9/matplotlib-inline_1628242447089/work
+mistune==0.8.4
+more-itertools==8.14.0
+mpmath==1.2.1
+multidict==6.0.4
+nbclassic==0.4.3
+nbclient==0.6.6
+nbconvert==6.5.0
+nbformat==5.4.0
+nest-asyncio @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-xymukih3/nest-asyncio_1649931465456/work
+networkx==3.0
+nltk==3.8.1
+notebook==6.4.12
+notebook-shim==0.1.0
+numba==0.56.4
+numpy @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_d18vvv3mag/croot/numpy_and_numpy_base_1672336185310/work
+oauthlib==3.2.0
+openai==0.27.8
+openai-whisper==20230314
+packaging==23.0
+pandocfilters==1.5.0
+parso @ file:///opt/conda/conda-bld/parso_1641458642106/work
+pexpect @ file:///tmp/build/80754af9/pexpect_1605563209008/work
+pickleshare @ file:///tmp/build/80754af9/pickleshare_1606932040724/work
+Pillow==9.4.0
+-e git+https://github.com/openai/point-e@fc8a607c08a3ea804cc82bf1ef8628f88a3a5d2f#egg=point_e
+prometheus-client==0.14.1
+prompt-toolkit @ file:///tmp/build/80754af9/prompt-toolkit_1633440160888/work
+protobuf==4.21.12
+psutil==5.9.4
+ptyprocess @ file:///tmp/build/80754af9/ptyprocess_1609355006118/work/dist/ptyprocess-0.7.0-py2.py3-none-any.whl
+pure-eval @ file:///opt/conda/conda-bld/pure_eval_1646925070566/work
+pyasn1==0.4.8
+pyasn1-modules==0.2.8
+pycryptodomex==3.18.0
+pycurl==7.43.0.1
+Pygments @ file:///opt/conda/conda-bld/pygments_1644249106324/work
+pyparsing==3.0.9
+PyPDF2==3.0.1
+pyrsistent==0.18.1
+python-dateutil @ file:///tmp/build/80754af9/python-dateutil_1626374649649/work
+pytils==0.4.1
+PyWavelets==1.4.1
+PyYAML==6.0
+pyzmq @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_8599562e-e9e5-443b-91db-7f7c0ba6aad3mrdoyvz4/croots/recipe/pyzmq_1657724196154/work
+recordclass==0.18.2
+regex==2022.10.31
+requests==2.28.2
+requests-oauthlib==1.3.1
+retrying==1.3.4
+rsa==4.9
+s-tui==1.1.4
+scidownl==1.0.0
+scihub==0.0.1
+scikit-image==0.19.3
+scikit-learn==1.2.2
+scipy==1.9.0
+selection==0.0.21
+semantic-version==2.10.0
+Send2Trash==1.8.0
+sentence-transformers==2.2.2
+sentencepiece==0.1.97
+setuptools-rust==1.5.1
+shap-e @ git+https://github.com/openai/shap-e.git@0b26c720b28fe31f8a79fc5a9dc907fbd0f67162
+SimpleCache==0.1.2
+six @ file:///tmp/build/80754af9/six_1644875935023/work
+sklearn==0.0
+sniffio==1.2.0
+soupsieve==2.3.2.post1
+SQLAlchemy==1.4.46
+stack-data @ file:///opt/conda/conda-bld/stack_data_1646927590127/work
+sympy @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_21kpmugwgm/croot/sympy_1668202392692/work
+tablib==3.3.0
+tensorboard==2.9.1
+tensorboard-data-server==0.6.1
+tensorboard-plugin-wit==1.8.1
+termcolor==2.2.0
+terminado==0.15.0
+threadpoolctl==3.1.0
+tifffile==2023.2.2
+tiktoken==0.3.1
+tinycss2==1.1.1
+tokenizers==0.13.2
+toml==0.10.2
+torch==2.0.0.dev20230202
+torchaudio==0.14.0.dev20220603
+torchvision==0.14.1
+tornado @ file:///Users/ktietz/demo/mc3/conda-bld/tornado_1628698929452/work
+tqdm==4.64.1
+traitlets==5.3.0
+transformers==4.27.4
+typing_extensions==4.4.0
+uritemplate==4.1.1
+urllib3==1.26.14
+urwid==2.1.2
+user-agent==0.1.10
+wcwidth==0.2.6
+webencodings==0.5.1
+weblib==0.1.30
+websocket-client==1.3.3
+Werkzeug==2.3.6
+wget==3.2
+-e git+https://github.com/MiscellaneousStuff/whisper@e87e7c46466505688119011f9190f7eb8c437b53#egg=whisper&subdirectory=../../whisper
+widgetsnbextension==4.0.5
+yarl==1.9.2
+zipp==3.8.1
