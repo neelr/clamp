@@ -3,7 +3,7 @@
 <img width="433" alt="image" src="https://github.com/neelr/clamp/assets/35831013/640a9c12-7add-443d-b56b-ec01782fa4ce" style="align-self:center" >
 
 ## Abstract 📝
-https://s.neelr.dev/clamp-research-paper
+https://arxiv.org/abs/2311.07617
 
 This paper highlights a shift in how to approach material generation. Instead of material-to-material, we propose a language-to-material generation architecture that utilizes millions of untapped data points. Using a web scraper to collect crystal text pairs from open-source research papers, a contrastive model can be trained using a convolutional graph neural network encoder and a language encoder. This would allow unsupervised zero-shot classification which can be trained by taking advantage of linguistic structure. Without any specific training data, an ~82\% accuracy was achieved and ~75\% accuracy for photocatalyst prediction with an extremely small dataset. This novel network could ideally be cross-applied to any reaction that can be described via text, opening completely new methods to think about 3D chemical framework generation. In the full experiment diffusion models would likely be incorporated to fully exploit the latent space.
 
